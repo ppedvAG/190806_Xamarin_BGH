@@ -30,6 +30,8 @@ namespace HalloXamarin
             // 3) Aus mehreren Optionen wählen
             string obst = await DisplayActionSheet("Wähle dein Lieblingsobst", null, null, "Apfel", "Birne", "Banane", "Orange");
             await DisplayAlert("Dein Obst", obst, "Mjam....");
+
+            await DisplayAlert("Dein Passwort ist:", entryPasswort.Text, "Total sicher ;) ");
         }
     }
 }

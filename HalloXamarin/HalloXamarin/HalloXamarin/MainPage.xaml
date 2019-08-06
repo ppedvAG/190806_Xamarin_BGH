@@ -16,8 +16,8 @@
                FontAttributes="Italic"
                FontFamily="Arial"/>
 
-        <Entry Placeholder="Username" Keyboard="Numeric"/>
-        <Entry Placeholder="Passwort" IsPassword="True"/>
+        <Entry x:Name="entryUsername" Placeholder="Username" Keyboard="Numeric"/>
+        <Entry x:Name="entryPasswort" Placeholder="Passwort" IsPassword="True"/>
 
         <!-- Mehrzeiliges Eingabefeld: -->
         <Editor Placeholder="Notizen..."
