@@ -6,6 +6,11 @@
              mc:Ignorable="d"
              x:Class="Layoutcontainer.App">
     <Application.Resources>
-
+        <Style TargetType="Button" x:Key="specialButtonStyle">
+            <Setter Property="BackgroundColor" Value="Green"/>
+            <Setter Property="TextColor" Value="Brown"/>
+            <Setter Property="FontSize" Value="70"/>
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
     </Application.Resources>
 </Application>
