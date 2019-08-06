@@ -6,11 +6,25 @@
              mc:Ignorable="d"
              x:Class="HalloXamarin.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms! ---- by Michi" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout BackgroundColor="LightBlue">
+
+        <Label Text="Hallo Welt"
+               BackgroundColor="LightSlateGray"
+               TextColor="LightCyan"
+               HorizontalTextAlignment="Center"
+               FontSize="44"
+               FontAttributes="Italic"
+               FontFamily="Arial"/>
+
+        <Entry Placeholder="Username" Keyboard="Numeric"/>
+        <Entry Placeholder="Passwort" IsPassword="True"/>
+
+        <!-- Mehrzeiliges Eingabefeld: -->
+        <Editor Placeholder="Notizen..."
+                HeightRequest="150"/>
+
+        <Button Text="Klick mich !"/>
+
     </StackLayout>
 
 </ContentPage>

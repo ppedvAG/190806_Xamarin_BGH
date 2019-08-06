@@ -16,6 +16,7 @@ namespace HalloXamarin
         public MainPage()
         {
             InitializeComponent();
+            Entry e = new Entry();
         }
     }
 }
