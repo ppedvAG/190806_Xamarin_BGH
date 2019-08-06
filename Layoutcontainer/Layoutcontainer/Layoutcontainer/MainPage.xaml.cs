@@ -22,5 +22,18 @@ namespace Layoutcontainer
         {
             // stackLayoutRoot.Children.Add(new Button { Text = "Automatisch generierter Button" });
         }
+
+        private void ChangeStyle(object sender, EventArgs e)
+        {
+            // Style neu zuweisen
+            // buttonStatic.Style = (Style)gridContainer.Resources["notspecialButtonStyle"];
+            // Style aus App.xaml
+            // App.Current.Resources["styleAus_App.xaml"]
+
+            // Unterschied zwischen Static und Dynamic-Resource
+
+            gridContainer.Resources["specialButtonStyle"] = gridContainer.Resources["notspecialButtonStyle"]; // Ressource austauschen
+            // StaticResource bekommt den Austausch der Referenz nicht mit, DynamicResource schon (== aber mehr Overhead !)
+        }
     }
 }

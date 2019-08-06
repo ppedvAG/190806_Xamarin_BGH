@@ -65,7 +65,8 @@
 
     </Grid>-->
 
-    <Grid BackgroundColor="Black"
+    <Grid x:Name="gridContainer"
+          BackgroundColor="Black"
           ColumnSpacing="10"
           RowSpacing="10"
           Padding="40">
@@ -87,7 +88,13 @@
                 <Setter Property="FontSize" Value="40"/>
                 <Setter Property="CornerRadius" Value="10"/>
             </Style>
-            
+            <Style TargetType="Button" x:Key="notspecialButtonStyle">
+                <Setter Property="BackgroundColor" Value="DarkSalmon"/>
+                <Setter Property="TextColor" Value="MediumSpringGreen"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="CornerRadius" Value="40"/>
+            </Style>
+
             <!-- Impliziter Style-->
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Firebrick"/>
@@ -104,16 +111,16 @@
         <Button Grid.Row="1" Grid.Column="1" Text="2" BackgroundColor="Orange" TextColor="Black" FontSize="{StaticResource defaultFontSize}" CornerRadius="30"/>
         <Button Grid.Row="1" Grid.Column="2" Text="3" BackgroundColor="Orange" TextColor="Black" FontSize="{StaticResource defaultFontSize}" CornerRadius="30"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Text="4" Style="{StaticResource specialButtonStyle}"/>
-        <Button Grid.Row="2" Grid.Column="1" Text="5" Style="{StaticResource specialButtonStyle}"/>
-        <Button Grid.Row="2" Grid.Column="2" Text="6" Style="{DynamicResource specialButtonStyle}">
+        <Button Grid.Row="2" Grid.Column="0" Text="4" Style="{StaticResource specialButtonStyle}" Clicked="ChangeStyle"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="5" Style="{StaticResource specialButtonStyle}" x:Name="buttonStatic"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="6" Style="{DynamicResource specialButtonStyle}" x:Name="buttonDynamic">
             <Button.Resources>
-                <Style TargetType="Button" x:Key="specialButtonStyle">
+                <!--<Style TargetType="Button" x:Key="specialButtonStyle">
                     <Setter Property="BackgroundColor" Value="Gray"/>
                     <Setter Property="TextColor" Value="IndianRed"/>
                     <Setter Property="FontSize" Value="22"/>
                     <Setter Property="CornerRadius" Value="40"/>
-                </Style>
+                </Style>-->
             </Button.Resources>
         </Button>
 
