@@ -23,7 +23,7 @@
         <Editor Placeholder="Notizen..."
                 HeightRequest="150"/>
 
-        <Button Text="Klick mich !"/>
+        <Button Text="Klick mich !" Clicked="ButtonKlickMich_Clicked"/>
 
     </StackLayout>
 

@@ -16,7 +16,20 @@ namespace HalloXamarin
         public MainPage()
         {
             InitializeComponent();
-            Entry e = new Entry();
+        }
+
+        private async void ButtonKlickMich_Clicked(object sender, EventArgs e)
+        {
+            // 1) Klassische "MessageBox" 
+            await DisplayAlert("Meine erste Nachricht", "Hallo Welt", "Ok");
+
+            // 2) "Ja/Nein" - Messagebox
+            bool result = await DisplayAlert("Wichtige Frage", "Wollen wir Pause machen ?", "Ja", "Verdammt nochmal Ja !!!");
+            await DisplayAlert("Antwort", "Deine Antwort war: " + result, "Okay");
+
+            // 3) Aus mehreren Optionen wählen
+            string obst = await DisplayActionSheet("Wähle dein Lieblingsobst", null, null, "Apfel", "Birne", "Banane", "Orange");
+            await DisplayAlert("Dein Obst", obst, "Mjam....");
         }
     }
 }
