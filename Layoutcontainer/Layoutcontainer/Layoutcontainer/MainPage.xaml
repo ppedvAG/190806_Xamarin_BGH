@@ -4,13 +4,22 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Layoutcontainer.MainPage">
+             x:Class="Layoutcontainer.MainPage"
+             BackgroundColor="YellowGreen">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout BackgroundColor="MediumTurquoise"
+                 Orientation="Vertical"
+                 VerticalOptions="Fill"
+                 HorizontalOptions="Fill">
+        
+        <Entry Placeholder="Suchtext"/>
+        <BoxView BackgroundColor="LightGray"
+                 VerticalOptions="FillAndExpand"/>
+        <Button Text="Suchen !"/>
+        <Button Text="Suchen !"/>
+        <Button Text="Suchen !"/>
+        <Button Text="Suchen !"/>
+
     </StackLayout>
 
 </ContentPage>
