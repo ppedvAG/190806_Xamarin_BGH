@@ -17,5 +17,10 @@ namespace Layoutcontainer
         {
             InitializeComponent();
         }
+
+        private void ButtonAddElement_Clicked(object sender, EventArgs e)
+        {
+            stackLayoutRoot.Children.Add(new Button { Text = "Automatisch generierter Button" });
+        }
     }
 }
