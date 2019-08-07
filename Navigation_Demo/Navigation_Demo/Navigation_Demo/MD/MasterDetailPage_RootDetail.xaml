@@ -4,12 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Navigation_Demo.MainPage">
-
-    <StackLayout VerticalOptions="Center">
-        <Label Text="MainPage - Seite1"/>
-        <Button Text="Zur Seite 2 -  Modal" Clicked="Seite2Modal_Clicked"/>
-        <Button Text="Zur Seite 2 - NavigationPage" Clicked="Seite2NavigationPage_Clicked"/>
-    </StackLayout>
-
+             x:Class="Navigation_Demo.MD.MasterDetailPage_RootDetail"
+             Title="Detail">
+  <StackLayout Padding="10">
+    <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Master' page with an Icon that references it."/>
+  </StackLayout>
 </ContentPage>
