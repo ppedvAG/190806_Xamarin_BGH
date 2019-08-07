@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ShellNavigation.MainPage">
+
+    <!-- Schritt 1) Datentyp ContentPage durch Shell ersetzen (XAML UND CodeBehind)-->
+
+
+    <!-- Schicht 1: FlyoutItem  (Menüpunkt)-->
+    <!-- Schicht 2: Tab  (Untermenüpunkt)-->
+    <!-- Schicht 3: ShellContent  (Inhalt)-->
+
+    <FlyoutItem Title="Hauptseite">
+        <Tab Title="Tab 1">
+            <ShellContent>
+                <ContentPage>
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Seite 1 im Tab 1"/>
+                        <BoxView BackgroundColor="LightSeaGreen"/>
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+
+        <Tab Title="Tab 2">
+            <ShellContent>
+                <ContentPage>
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Seite 2 im Tab 2"/>
+                        <BoxView BackgroundColor="GhostWhite"/>
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Einstellungen">
+        <Tab Title="Einstellungen">
+            <ShellContent>
+                <ContentPage>
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Settings"/>
+                        <BoxView BackgroundColor="Ivory"/>
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+</Shell>
