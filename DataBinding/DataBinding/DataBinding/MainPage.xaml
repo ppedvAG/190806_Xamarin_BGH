@@ -3,8 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:DataBinding"
              mc:Ignorable="d"
              x:Class="DataBinding.MainPage">
+    <ContentPage.Resources>
+        <local:Farbkonverter x:Key="farbkonverter"/>
+    </ContentPage.Resources>
+    
 
     <StackLayout VerticalOptions="Center">
         <Slider x:Name="sliderWert" Minimum="0" Maximum="100"/>
@@ -15,7 +20,12 @@
                Text="{Binding Source={x:Reference entryQuelle},Path=Text,Mode=OneWay}"/>
         <Label Text="{Binding Source={x:Reference sliderWert},Path=Value,
                               StringFormat='Aktueller Wert ist: {0:C4}'}"/>
-    </StackLayout>
 
+        <Entry x:Name="entryFarbe" Text="Red"/>
+        <BoxView BackgroundColor="{Binding Source={x:Reference entryFarbe},
+                                    Path=Text,
+                                    Converter={StaticResource farbkonverter}}"/>
+
+    </StackLayout>
   
 </ContentPage>
