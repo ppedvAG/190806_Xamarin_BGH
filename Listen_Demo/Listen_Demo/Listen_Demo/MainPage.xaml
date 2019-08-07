@@ -8,7 +8,7 @@
 
     <StackLayout Margin="10">
 
-        <SearchBar x:Name="searchBarSuchtext"/>
+        <SearchBar x:Name="searchBarSuchtext" TextChanged="SearchBarSuchtext_TextChanged"/>
         <Button x:Name="buttonPersonenLaden" Text="Personen laden" Clicked="ButtonPersonenLaden_Clicked"/>
         <ListView x:Name="listViewPersonen" VerticalOptions="FillAndExpand"
                   IsPullToRefreshEnabled="True"
