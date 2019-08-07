@@ -65,7 +65,7 @@
 
     </Grid>-->
 
-    <Grid x:Name="gridContainer"
+    <!--<Grid x:Name="gridContainer"
           BackgroundColor="Black"
           ColumnSpacing="10"
           RowSpacing="10"
@@ -81,7 +81,7 @@
         <Grid.Resources>
             <x:Double x:Key="defaultFontSize">12</x:Double>
 
-            <!-- Expliziter Style-->
+            --><!-- Expliziter Style--><!--
             <Style TargetType="Button" x:Key="specialButtonStyle">
                 <Setter Property="BackgroundColor" Value="Purple"/>
                 <Setter Property="TextColor" Value="LightSalmon"/>
@@ -95,7 +95,7 @@
                 <Setter Property="CornerRadius" Value="40"/>
             </Style>
 
-            <!-- Impliziter Style-->
+            --><!-- Impliziter Style--><!--
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Firebrick"/>
                 <Setter Property="TextColor" Value="DarkRed"/>
@@ -115,12 +115,12 @@
         <Button Grid.Row="2" Grid.Column="1" Text="5" Style="{StaticResource specialButtonStyle}" x:Name="buttonStatic"/>
         <Button Grid.Row="2" Grid.Column="2" Text="6" Style="{DynamicResource specialButtonStyle}" x:Name="buttonDynamic">
             <Button.Resources>
-                <!--<Style TargetType="Button" x:Key="specialButtonStyle">
+                --><!--<Style TargetType="Button" x:Key="specialButtonStyle">
                     <Setter Property="BackgroundColor" Value="Gray"/>
                     <Setter Property="TextColor" Value="IndianRed"/>
                     <Setter Property="FontSize" Value="22"/>
                     <Setter Property="CornerRadius" Value="40"/>
-                </Style>-->
+                </Style>--><!--
             </Button.Resources>
         </Button>
 
@@ -131,6 +131,27 @@
         <Button Grid.Row="4" Grid.Column="1" Text="0" BackgroundColor="White" TextColor="Black" FontSize="30" CornerRadius="30"/>
         <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="Dial" BackgroundColor="ForestGreen" />
 
-    </Grid>
+    </Grid>-->
+
+    <!--  Absolute Layout: -->
+    <!--  LayoutBounds="X,Y,width,height"-->
+    <!--  LayoutFlags: Welcher Wert Proportional (zwischen 0 und 1) gewertet wird-->
+    <AbsoluteLayout>
+        <BoxView BackgroundColor="MediumSpringGreen"
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.333"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <StackLayout BackgroundColor="SlateGray"
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.667"
+                 AbsoluteLayout.LayoutFlags="All">
+            <Button Text="Button 1"/>
+            <Button Text="Button 1"/>
+            <Button Text="Button 1"/>
+            <Button Text="Button 1"/>
+        </StackLayout>
+        <BoxView BackgroundColor="Gray"
+                 AbsoluteLayout.LayoutBounds="100,100,100,100"/>
+        <Button Text="Demo" BackgroundColor="MediumOrchid"
+                 AbsoluteLayout.LayoutBounds="150,150,100,100"/>
+    </AbsoluteLayout>
 
 </ContentPage>

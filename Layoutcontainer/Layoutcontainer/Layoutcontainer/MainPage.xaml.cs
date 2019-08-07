@@ -32,7 +32,7 @@ namespace Layoutcontainer
 
             // Unterschied zwischen Static und Dynamic-Resource
 
-            gridContainer.Resources["specialButtonStyle"] = gridContainer.Resources["notspecialButtonStyle"]; // Ressource austauschen
+            // gridContainer.Resources["specialButtonStyle"] = gridContainer.Resources["notspecialButtonStyle"]; // Ressource austauschen
             // StaticResource bekommt den Austausch der Referenz nicht mit, DynamicResource schon (== aber mehr Overhead !)
         }
     }
