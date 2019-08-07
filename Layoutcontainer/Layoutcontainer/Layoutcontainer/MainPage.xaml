@@ -136,7 +136,7 @@
     <!--  Absolute Layout: -->
     <!--  LayoutBounds="X,Y,width,height"-->
     <!--  LayoutFlags: Welcher Wert Proportional (zwischen 0 und 1) gewertet wird-->
-    <AbsoluteLayout>
+    <!--<AbsoluteLayout>
         <BoxView BackgroundColor="MediumSpringGreen"
                  AbsoluteLayout.LayoutBounds="0,0,1,0.333"
                  AbsoluteLayout.LayoutFlags="SizeProportional"/>
@@ -152,6 +152,36 @@
                  AbsoluteLayout.LayoutBounds="100,100,100,100"/>
         <Button Text="Demo" BackgroundColor="MediumOrchid"
                  AbsoluteLayout.LayoutBounds="150,150,100,100"/>
-    </AbsoluteLayout>
+    </AbsoluteLayout>-->
 
+
+    <RelativeLayout>
+
+        <BoxView x:Name="boxViewHeader" BackgroundColor="ForestGreen"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression 
+                                                    Type=RelativeToParent,
+                                                    Property=Height,
+                                                    Factor=0.333}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression 
+                                                    Type=RelativeToParent,
+                                                    Property=Width,
+                                                    Factor=1}"/>
+
+        <BoxView BackgroundColor="MediumSeaGreen"
+                 HeightRequest="100" WidthRequest="100"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                                              Type=RelativeToView,
+                                              ElementName=boxViewHeader,
+                                              Property=Height,
+                                              Factor=1,
+                                              Constant=-50}"
+                  RelativeLayout.XConstraint="{ConstraintExpression
+                                              Type=RelativeToView,
+                                              ElementName=boxViewHeader,
+                                              Property=Width,
+                                              Factor=0.5,
+                                              Constant=-50}"/>
+
+    </RelativeLayout>
+    
 </ContentPage>
