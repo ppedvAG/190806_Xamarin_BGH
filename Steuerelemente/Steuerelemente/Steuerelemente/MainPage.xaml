@@ -6,11 +6,51 @@
              mc:Ignorable="d"
              x:Class="Steuerelemente.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <!--<StackLayout Margin="10">
+
+        <ActivityIndicator HeightRequest="10"
+                           WidthRequest="10"
+                           IsEnabled="True"
+                           IsVisible="True"/>
+        <Picker>
+            <Picker.Items>
+                <x:String>Apfel</x:String>
+                <x:String>Birne</x:String>
+                <x:String>Banane</x:String>
+            </Picker.Items>
+        </Picker>
+        <DatePicker/>
+        <TimePicker/>
+        <ProgressBar Progress="0.5"/>
+        <SearchBar />
+        <Stepper Minimum="0" Maximum="100" Increment="10"/>
+    </StackLayout>-->
+
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Einstellungen">
+                <TextCell Text="Ein einfacher Text" Detail="Subüberschrift"/>
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notifications" On="True"/>
+                <ImageCell Text="Max Mustermann"
+                           Detail="Online"
+                           ImageSource="https://placekitten.com/100/100"/>
+            </TableSection>
+            <TableSection Title="Fortgeschrittenen Einstellungen">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Eigene Zelle zusammenbauen"/>
+                        <TimePicker HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <WebView Source="https://www.google.com"/>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+    
+    
 
 </ContentPage>
