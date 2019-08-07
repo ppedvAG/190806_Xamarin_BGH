@@ -38,5 +38,31 @@ namespace Listen_Demo
             listViewPersonen.ItemsSource = personen;
 
         }
+
+        private void ListViewPersonen_Refreshing(object sender, EventArgs e)
+        {
+            List<Person> personen = new List<Person>
+            {
+                new Person{Vorname="Tom",Nachname="Ate",Alter=10,Kontostand=100},
+                new Person{Vorname="Anna",Nachname="Nass",Alter=20,Kontostand=200},
+                new Person{Vorname="Claire",Nachname="Grube",Alter=100,Kontostand=-12312313100},
+            };
+
+
+            listViewPersonen.ItemsSource = personen;
+            listViewPersonen.EndRefresh();
+        }
+
+        private void MenuItemInfo_Clicked(object sender, EventArgs e)
+        {
+            Person p = (sender as MenuItem).BindingContext as Person;
+            // Person p = ((Person)((MenuItem)sender).BindingContext);
+            DisplayAlert("Personeninfos", $"{p.Vorname} {p.Nachname}, Alter:{p.Alter}, Kontostand:{p.Kontostand}€", "OK");
+        }
+
+        private void MenuItemLöschen_Clicked(object sender, EventArgs e)
+        {
+            // Löschen ;)
+        }
     }
 }

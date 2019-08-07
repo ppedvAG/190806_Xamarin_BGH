@@ -10,10 +10,17 @@
 
         <SearchBar x:Name="searchBarSuchtext"/>
         <Button x:Name="buttonPersonenLaden" Text="Personen laden" Clicked="ButtonPersonenLaden_Clicked"/>
-        <ListView x:Name="listViewPersonen" VerticalOptions="FillAndExpand">
+        <ListView x:Name="listViewPersonen" VerticalOptions="FillAndExpand"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}"/>
+                    <TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Info" Clicked="MenuItemInfo_Clicked"/>
+                            <MenuItem Text="Löschen" Clicked="MenuItemLöschen_Clicked"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
