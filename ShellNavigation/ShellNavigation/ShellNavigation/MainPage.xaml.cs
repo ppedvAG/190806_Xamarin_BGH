@@ -17,5 +17,11 @@ namespace ShellNavigation
         {
             InitializeComponent();
         }
+
+        private void Navigation_Click(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync("//Einstellungen");//relativ
+            // Shell.Current.GoToAsync("//Hauptseite/Tab2/Seite2");//absolut
+        }
     }
 }

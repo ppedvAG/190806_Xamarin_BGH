@@ -13,20 +13,21 @@
     <!-- Schicht 2: Tab  (Untermenüpunkt)-->
     <!-- Schicht 3: ShellContent  (Inhalt)-->
 
-    <FlyoutItem Title="Hauptseite">
-        <Tab Title="Tab 1">
-            <ShellContent>
+    <FlyoutItem Title="Hauptseite" Route="Hauptseite">
+        <Tab Title="Tab 1" Route="Tab1">
+            <ShellContent Route="Seite1">
                 <ContentPage>
                     <StackLayout VerticalOptions="Center">
                         <Label Text="Seite 1 im Tab 1"/>
                         <BoxView BackgroundColor="LightSeaGreen"/>
+                        <Button Text="Navigiere zu Einstellungen" Clicked="Navigation_Click"/>
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
         </Tab>
 
-        <Tab Title="Tab 2">
-            <ShellContent>
+        <Tab Title="Tab 2" Route="Tab2">
+            <ShellContent Route="Seite2">
                 <ContentPage>
                     <StackLayout VerticalOptions="Center">
                         <Label Text="Seite 2 im Tab 2"/>
@@ -38,7 +39,7 @@
     </FlyoutItem>
     <FlyoutItem Title="Einstellungen">
         <Tab Title="Einstellungen">
-            <ShellContent>
+            <ShellContent Route="Einstellungen">
                 <ContentPage>
                     <StackLayout VerticalOptions="Center">
                         <Label Text="Settings"/>
@@ -48,4 +49,12 @@
             </ShellContent>
         </Tab>
     </FlyoutItem>
+    
+    <!-- Kurzschreibweise -->
+    <!--<ContentPage Title="Seite 1">
+        <BoxView BackgroundColor="SeaGreen"/>
+    </ContentPage>
+    <ContentPage Title="Seite 2">
+        <BoxView BackgroundColor="Cyan"/>
+    </ContentPage>-->
 </Shell>
