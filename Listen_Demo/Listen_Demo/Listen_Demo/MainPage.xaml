@@ -6,11 +6,18 @@
              mc:Ignorable="d"
              x:Class="Listen_Demo.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout Margin="10">
+
+        <SearchBar x:Name="searchBarSuchtext"/>
+        <Button x:Name="buttonPersonenLaden" Text="Personen laden" Clicked="ButtonPersonenLaden_Clicked"/>
+        <ListView x:Name="listViewPersonen" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </StackLayout>
 
 </ContentPage>
