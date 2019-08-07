@@ -16,6 +16,20 @@ namespace Image_Demo
         public MainPage()
         {
             InitializeComponent();
+
+            // Variante 1) Bilder aus dem Web herunterladen
+            //var source = (UriImageSource)ImageSource.FromUri(new Uri("http://placekitten.com/100/100"));
+            //source.CachingEnabled = true; // default-fall
+            //source.CacheValidity = TimeSpan.FromHours(24); // default-fall
+
+            //imageBild.Source = source;
+
+            // Variante 2)
+            // imageBild.Source = ImageSource.FromFile("hund.jpg");
+
+            // Variante 3)
+            // Ressourcen-ID: Projektname.Ordnername.Dateiname.Extension
+            // imageBild.Source = ImageSource.FromResource("Image_Demo.Images.hamster.jpg");
         }
     }
 }
