@@ -61,28 +61,38 @@ namespace Geolocation_Demo
 
         private void SliderÄndern_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            entries = new Microcharts.Entry[]
+            List<Microcharts.Entry> entries = new List<Microcharts.Entry>();
+            Random r = new Random();
+            for (int i = 0; i < 20; i++)
             {
-                new Microcharts.Entry((float)sliderÄndern1.Value)
-                {
-                    Label = "Slider Eins",
-                    ValueLabel = "X",
-                    Color = SKColor.Parse("#266489")
-                },
-                new Microcharts.Entry((float)sliderÄndern2.Value)
-                {
-                    Label = "Slider Zwei",
-                    ValueLabel = "Y",
-                    Color = SKColor.Parse("#68B9C0")
-                },
-                new Microcharts.Entry((float)sliderÄndern3.Value)
-                {
-                    Label = "Slider Drei",
-                    ValueLabel = "Z",
-                    Color = SKColor.Parse("#90D585")
-                }
-            };
+                if (r.Next(0, 3) % 3 == 0)
+                    entries.Add(new Microcharts.Entry((float)sliderÄndern1.Value)
+                    {
+                        Label = "Slider Eins",
+                        ValueLabel = "X",
+                        Color = SKColor.Parse("#266489")
+                    });
+                else if (r.Next(0, 3) % 3 == 1)
+                    entries.Add(new Microcharts.Entry((float)sliderÄndern2.Value)
+                    {
+                        Label = "Slider Zwei",
+                        ValueLabel = "Y",
+                        Color = SKColor.Parse("#68B9C0")
+                    });
+                else
+                    entries.Add(new Microcharts.Entry((float)sliderÄndern3.Value)
+                    {
+                        Label = "Slider Drei",
+                        ValueLabel = "Z",
+                        Color = SKColor.Parse("#90D585")
+                    });
+            }
+
             var chart = new LineChart { Entries = entries };
+            chart.LineMode = LineMode.Straight;
+            chart.LineSize = 2;
+            chart.PointSize = 10;
+            chart.PointMode = PointMode.None;
             chartView.Chart = chart;
         }
     }
