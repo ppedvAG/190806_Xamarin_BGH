@@ -11,7 +11,10 @@
 
         <Button x:Name="buttonLocation" Text="Get Location" Clicked="ButtonLocation_Clicked"/>
         <Label x:Name="labelLocation" Text="---Location---"/>
-        <microcharts:ChartView x:Name="chartView"/>
+        <microcharts:ChartView x:Name="chartView" HeightRequest="400"/>
+        <Slider x:Name="sliderÄndern1" Minimum="0" Maximum="100" ValueChanged="SliderÄndern_ValueChanged"/>
+        <Slider x:Name="sliderÄndern2" Minimum="0" Maximum="100" ValueChanged="SliderÄndern_ValueChanged"/>
+        <Slider x:Name="sliderÄndern3" Minimum="0" Maximum="100" ValueChanged="SliderÄndern_ValueChanged"/>
     </StackLayout>
 
 </ContentPage>

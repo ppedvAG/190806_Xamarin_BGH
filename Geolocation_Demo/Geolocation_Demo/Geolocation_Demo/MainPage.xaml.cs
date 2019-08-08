@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using Microcharts;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace Geolocation_Demo
         {
             InitializeComponent();
         }
+        Microcharts.Entry[] entries;
 
         private async void ButtonLocation_Clicked(object sender, EventArgs e)
         {
@@ -31,27 +33,57 @@ namespace Geolocation_Demo
 
             // await currentLocation.OpenMapsAsync();
 
-            var entries = new Microcharts.Entry[]
+            entries = new Microcharts.Entry[]
             {
-                new Microcharts.Entry(200)
+                new Microcharts.Entry(100)
                 {
                     Label = "January",
                     ValueLabel = "200",
                     Color = SKColor.Parse("#266489")
                 },
-                new Microcharts.Entry(400)
+                new Microcharts.Entry(50)
                 {
                     Label = "February",
                     ValueLabel = "400",
                     Color = SKColor.Parse("#68B9C0")
                 },
-                new Microcharts.Entry(-100)
+                new Microcharts.Entry(20)
                 {
                     Label = "March",
                     ValueLabel = "-100",
                     Color = SKColor.Parse("#90D585")
                 }
             };
+
+            var chart = new LineChart { Entries = entries };
+            chartView.Chart = chart;
+        }
+
+        private void SliderÄndern_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            entries = new Microcharts.Entry[]
+            {
+                new Microcharts.Entry((float)sliderÄndern1.Value)
+                {
+                    Label = "Slider Eins",
+                    ValueLabel = "X",
+                    Color = SKColor.Parse("#266489")
+                },
+                new Microcharts.Entry((float)sliderÄndern2.Value)
+                {
+                    Label = "Slider Zwei",
+                    ValueLabel = "Y",
+                    Color = SKColor.Parse("#68B9C0")
+                },
+                new Microcharts.Entry((float)sliderÄndern3.Value)
+                {
+                    Label = "Slider Drei",
+                    ValueLabel = "Z",
+                    Color = SKColor.Parse("#90D585")
+                }
+            };
+            var chart = new LineChart { Entries = entries };
+            chartView.Chart = chart;
         }
     }
 }
