@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM_Simpel.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace MVVM_Simpel
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new PhotoPage();
         }
 
         protected override void OnStart()
