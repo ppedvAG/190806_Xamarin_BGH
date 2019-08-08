@@ -11,10 +11,12 @@
 
         <Button x:Name="buttonLocation" Text="Get Location" Clicked="ButtonLocation_Clicked"/>
         <Label x:Name="labelLocation" Text="---Location---"/>
-        <microcharts:ChartView x:Name="chartView" HeightRequest="400"/>
+        <microcharts:ChartView x:Name="chartView" HeightRequest="250"/>
         <Slider x:Name="sliderÄndern1" Minimum="0" Maximum="100" ValueChanged="SliderÄndern_ValueChanged"/>
         <Slider x:Name="sliderÄndern2" Minimum="0" Maximum="100" ValueChanged="SliderÄndern_ValueChanged"/>
         <Slider x:Name="sliderÄndern3" Minimum="0" Maximum="100" ValueChanged="SliderÄndern_ValueChanged"/>
+
+        <Button Text="Write NFC" Clicked="ButtonWriteNFC_Clicked"/>
     </StackLayout>
 
 </ContentPage>
