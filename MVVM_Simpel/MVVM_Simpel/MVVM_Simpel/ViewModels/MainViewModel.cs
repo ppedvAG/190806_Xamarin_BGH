@@ -1,13 +1,15 @@
 ﻿using MVVM_Simpel.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MVVM_Simpel.ViewModels
 {
-    class MainViewModel
+    class MainViewModel : BaseViewModel
     {
         public MainViewModel() // ctor + TAB + TAB
         {
@@ -16,13 +18,17 @@ namespace MVVM_Simpel.ViewModels
         }
 
         private readonly PersonenService service; // Geschäftslogik
-
         private void PersonenLaden(object obj)
         {
             Personenliste = service.PersonenLaden();
         }
 
-        public List<Person> Personenliste { get; set; }
+        private List<Person> personenliste;
+        public List<Person> Personenliste
+        {
+            get => personenliste;
+            set => SetProperty(ref personenliste, value);
+        }
         public Command PersonenLadenCommand { get; set; }
 
     }

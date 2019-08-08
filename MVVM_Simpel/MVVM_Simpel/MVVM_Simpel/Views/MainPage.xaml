@@ -3,11 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MVVM_Simpel.ViewModels"
              mc:Ignorable="d"
              x:Class="MVVM_Simpel.MainPage">
-
-    <StackLayout>
-        
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout Margin="10">
+        <Button Text="Personen laden" Command="{Binding PersonenLadenCommand}"/>
+        <ListView VerticalOptions="FillAndExpand"
+                  IsPullToRefreshEnabled="True"
+                  RefreshCommand="{Binding PersonenLadenCommand}"
+                  ItemsSource="{Binding Personenliste}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Info"/>
+                            <MenuItem Text="Löschen"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
