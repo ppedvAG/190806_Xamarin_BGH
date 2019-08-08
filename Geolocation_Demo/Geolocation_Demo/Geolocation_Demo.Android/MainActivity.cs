@@ -77,7 +77,14 @@ namespace Geolocation_Demo.Droid
         protected override void OnNewIntent(Intent intent)
         {
             base.OnNewIntent(intent);
-            x.OnNewIntent(this, intent);
+            try
+            {
+                x.OnNewIntent(this, intent);
+            }
+            catch (Exception)
+            {
+                Toast.MakeText(this, "Das NFC-Tag ist möglicherweise nicht beschrieben!", ToastLength.Long).Show();
+            }
         }
     }
 }
