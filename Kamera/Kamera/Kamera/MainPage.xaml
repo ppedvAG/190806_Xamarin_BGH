@@ -8,6 +8,7 @@
 
     <StackLayout>
         <Button Text="Foto machen !" Clicked="buttonFoto_Clicked"/>
+        <Button Text="Barcode Scannen!" Clicked="buttonBarcode_Clicked"/>
         <Image x:Name="imageFoto" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
     </StackLayout>
 

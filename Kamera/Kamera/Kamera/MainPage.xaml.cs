@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using ZXing.Mobile;
 
 namespace Kamera
 {
@@ -45,6 +46,17 @@ namespace Kamera
                 var stream = file.GetStream();
                 return stream;
             });
+        }
+
+        private async void buttonBarcode_Clicked(object sender, EventArgs e)
+        {
+
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+
+            var result = await scanner.Scan();
+
+            if (result != null)
+                await DisplayAlert("Barcode",result.Text,"Ok");
         }
     }
 }
