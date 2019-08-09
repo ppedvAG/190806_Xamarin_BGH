@@ -56,7 +56,8 @@ namespace AppCenterDemo
         }
         private void EsGibtEinenCrash()
         {
-            Crashes.GenerateTestCrash();
+            // Crashes.GenerateTestCrash();
+            throw new FormatException("Crashformat :)");
         }
 
         private void EntryWert_TextChanged(object sender, TextChangedEventArgs e)
