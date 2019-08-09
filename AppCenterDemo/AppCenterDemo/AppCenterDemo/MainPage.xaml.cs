@@ -1,4 +1,5 @@
-﻿using Microsoft.AppCenter.Crashes;
+﻿using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,16 @@ namespace AppCenterDemo
         private void EsGibtEinenCrash()
         {
             Crashes.GenerateTestCrash();
+        }
+
+        private void EntryWert_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Analytics.TrackEvent($"Passwort wurde geändert zu {e.NewTextValue}");
+        }
+
+        private void SwitchWert_Toggled(object sender, ToggledEventArgs e)
+        {
+            Analytics.TrackEvent("DoNotTrack-Setting");
         }
     }
 }

@@ -13,5 +13,11 @@
             <Button Text="Crash this App !" Clicked="Crash_Clicked"/>
         </StackLayout>
     </ContentPage>
+    <ContentPage Title="Event-Tracking">
+        <StackLayout Margin="10" VerticalOptions="Center">
+            <Entry x:Name="entryWert" Placeholder="Schreib mir was" TextChanged="EntryWert_TextChanged"/>
+            <Switch x:Name="switchWert" Toggled="SwitchWert_Toggled"/>
+        </StackLayout>
+    </ContentPage>
 
 </Shell>
