@@ -9,4 +9,5 @@
 
     <local:SettingsPage Title="Einstellungen"/>
     <local:TextPage Title="Textdokument"/>
+    <local:SQLitePage Title="SQLite"/>
 </Shell>

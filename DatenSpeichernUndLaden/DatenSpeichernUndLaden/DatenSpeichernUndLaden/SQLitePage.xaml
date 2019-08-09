@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DatenSpeichernUndLaden.SQLitePage">
+    
+    <StackLayout Margin="10">
+        
+        <Entry x:Name="entryName" Placeholder="Name"/>
+        <Entry x:Name="entryKontostand" Placeholder="Kontostand" Keyboard="Numeric"/>
+        <Button x:Name="buttonEinfügen" Text="Einfügen" Clicked="ButtonEinfügen_Clicked"/>
+        
+        <!-- Bekannter Bug in Xamarin.Forms 4.1: PullToRefresh funktioniert in einer Shell nicht
+             Bug wird in Xamarin.Forms 4.2 behoben: https://github.com/xamarin/Xamarin.Forms/pull/7032-->
+        
+        <ListView x:Name="listViewPersonen"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing"
+                  VerticalOptions="FillAndExpand"
+                  BackgroundColor="LightBlue">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding ID}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+    
+</ContentPage>
